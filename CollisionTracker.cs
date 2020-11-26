@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace SpaceShip
 {
-    public class ProjectileCollisionTracker
+    public class CollisionTracker
     {
 
         public double TotalCollisions { get; set; }
@@ -13,7 +13,7 @@ namespace SpaceShip
 
         public static List<Projectile> currProjectiles;
         public static List<IObstacle> currObstacles;
-        public ProjectileCollisionTracker()
+        public CollisionTracker()
         {
             currProjectiles = new List<Projectile>();
             currObstacles = new List<IObstacle>();

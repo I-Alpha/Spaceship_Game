@@ -14,7 +14,7 @@ namespace SpaceShip
         private IBackground background2;
         private ObstacleGenerator obstacleGenerator;
         private ProjectileGenerator projectileGenerator;
-        private ProjectileCollisionTracker projectileCollisionTracker;
+        private CollisionTracker projectileCollisionTracker;
         private ISprite shipSprite;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
@@ -72,7 +72,7 @@ namespace SpaceShip
             ProjectileGenerator.MoveSpeed = ProjectileMoveSpeed;
             ProjectileGenerator.fireDelay = fireDelay;
             ProjectileGenerator.fireLimit = projectilLimit;
-            projectileCollisionTracker = new ProjectileCollisionTracker();
+            projectileCollisionTracker = new CollisionTracker();
             ObstacleGenerator.ObjPerLevel = objPerLevel;
 
         }
@@ -119,8 +119,8 @@ namespace SpaceShip
             GraphicsDevice.Clear(Color.White);
 
             //Update coords using collision tracker class
-            obstacleGenerator.AllObstacles = ProjectileCollisionTracker.currObstacles;
-            projectileGenerator.ActiveProjectiles = ProjectileCollisionTracker.currProjectiles;
+            obstacleGenerator.AllObstacles = CollisionTracker.currObstacles;
+            projectileGenerator.ActiveProjectiles = CollisionTracker.currProjectiles;
 
 
 
